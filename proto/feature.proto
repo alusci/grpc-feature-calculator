@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+service FeatureService {
+  rpc GetFeatures (FeatureRequest) returns (FeatureResponse);
+}
+
+message FeatureRequest {
+  string user_id = 1;
+  string ip_address = 2;
+}
+
+message FeatureResponse {
+  map<string, string> features = 1;
+}
