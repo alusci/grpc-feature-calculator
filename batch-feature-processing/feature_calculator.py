@@ -32,6 +32,7 @@ for d in windows:
         F.count("*").alias(f"count_phone_{d}d"),
         F.countDistinct("date").alias(f"acount_phone_active_{d}d")
     ).withColumn(f"velocity_phone_{d}d", F.round(F.col(f"count_phone_{d}d") / F.lit(d), 2))
+    
     agg_list.append(agg)
 
     # PREFIX-level features
@@ -55,4 +56,4 @@ range_features = reduce(lambda df1, df2: df1.join(df2, on="phone_range", how="ou
 phone_features.show(5, truncate=False)
 
 # Save results
-phone_features.write.mode("overwrite").parquet("features/phone_features.parquet")
+phone_features.write.mode("overwrite").parquet("features/phone_features/*.parquet")

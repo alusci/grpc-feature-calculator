@@ -35,5 +35,5 @@ cdr_sample_df = spark.createDataFrame(data, schema)
 
 cdr_sample_df.show(10, truncate=False)
 
-cdr_sample_df.write.mode("overwrite").parquet("cdr-data/cdr_sample.parquet")
+cdr_sample_df.write.mode("overwrite").parquet("cdr-data/cdr_sample/*.parquet")
 
