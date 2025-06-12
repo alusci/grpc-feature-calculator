@@ -1,4 +1,4 @@
-# grpc-feature-calculator
+# gRPC Feature Calculator
 
 A feature engineering system for TELCO Call Detail Record (CDR) processing that combines batch feature computation with real-time gRPC services and AWS streaming analytics.
 
